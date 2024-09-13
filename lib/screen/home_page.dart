@@ -15,10 +15,10 @@ class HomePage extends StatelessWidget {
           builder: (context,data,_) {
             return Scaffold(
               appBar: AppBar(title: const Text("Data Table")),
-              body:  SingleChildScrollView(
-            scrollDirection: Axis.horizontal,  // Enable horizontal scroll if content overflows
-            child:data.dataTableModel.isEmpty ? const Center(child: CircularProgressIndicator()) :  SingleChildScrollView(
-            scrollDirection: Axis.vertical, // Enables vertical scrolling for rows
+              body: data.dataTableModel.isEmpty ? const Center(child: CircularProgressIndicator()) :  SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
             child:DataTable(
                   columns: [
                     DataColumn(
