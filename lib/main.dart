@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_mechine_text/screen/home.dart';
+import 'package:untitled2/screen/home_page.dart';
 
 void main() {
   runApp(const MyApp());
