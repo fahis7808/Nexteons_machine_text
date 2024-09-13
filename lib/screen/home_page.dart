@@ -5,7 +5,7 @@ import '../app_font.dart';
 import '../provider/home_provider.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +14,10 @@ class HomePage extends StatelessWidget {
       child: Consumer<HomeProvider>(
           builder: (context,data,_) {
             return Scaffold(
-              appBar: AppBar(title: Text("Data Table")),
+              appBar: AppBar(title: const Text("Data Table")),
               body:  SingleChildScrollView(
             scrollDirection: Axis.horizontal,  // Enable horizontal scroll if content overflows
-            child: SingleChildScrollView(
+            child:data.dataTableModel.isEmpty ? const Center(child: CircularProgressIndicator()) :  SingleChildScrollView(
             scrollDirection: Axis.vertical, // Enables vertical scrolling for rows
             child:DataTable(
                   columns: [
